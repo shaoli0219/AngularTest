@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <script type="text/javascript" src="lib/angular-1.3.0.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <form>
+        <input type="text" ng-model="name">
+        <p>输入内容：{{name}}</p>
+        <input type="checkbox" ng-model="isShow"><br>
+        <p ng-show="isShow">checkBox</p>
+        选择一个选项:<br><br>
+        <input type="radio" ng-model="myVar" value="dogs">Dogs
+        <input type="radio" ng-model="myVar" value="tuts">Tutorials
+        <input type="radio" ng-model="myVar" value="cars">Cars<br><br>
+        选择一个选项:
+        <select ng-model="myVar">
+            <option value="">
+            <option value="dogs">Dogs
+            <option value="tuts">Tutorials
+            <option value="cars">Cars
+        </select>
+    </form>
+    <div ng-switch="myVar">
+        <div ng-switch-when="dogs">
+            <h1>Dogs</h1>
+            <p>Welcome to a world of dogs.</p>
+        </div>
+        <div ng-switch-when="tuts">
+            <h1>Tutorials</h1>
+            <p>Learn from examples.</p>
+        </div>
+        <div ng-switch-when="cars">
+            <h1>Cars</h1>
+            <p>Read about cars.</p>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function ($scope) {
+
+    });
+</script>
+</html>

@@ -69,6 +69,16 @@ var person = {
 };
 
 // 把passport属性赋值给变量id:
-var {name, age: myAge, gender: sex, passport: id, school} = person;
+// 解构赋值还可以使用默认值，这样就避免了不存在的属性返回undefined的问题：
+var {name, age: myAge, gender: sex, passport: id, school, score = 0} = person;
 
-console.log('name = ' + name + ', id = ' + id + ', myAge = ' + myAge + ', sex = ' + sex);
+console.log('name = ' + name + ', id = ' + id + ', myAge = ' + myAge + ', sex = ' + sex + ', score = ' + score);
+
+// 解构赋值在很多时候可以大大简化代码。例如，交换两个变量x和y的值，可以这么写，不再需要临时变量：
+
+var x = 1, y = 2;
+[x, y] = [y, x];
+console.log('x = ' + x + ', y = ' + y);
+
+// 快速获取当前页面的域名和路径：
+// var {hostname: domain, pathname: path} = location;

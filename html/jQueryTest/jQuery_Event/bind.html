@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bind()方法</title>
+    <script type="text/javascript" src="../../../lib/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<p>this is a paragraph</p>
+<button>click me</button>
+</body>
+<script>
+    /**
+     *  bind()方法
+     *
+     *  $(selector).bind(event,data,function)
+     *
+     *  $(selector).bind({event:function, event:function, ...})
+     */
+
+    /*type one*/
+    $(document).ready(function () {
+        $("button").bind("click", function () {
+            $("p").slideToggle();
+        });
+    });
+
+    /*type two*/
+    $(function () {
+        $("button").bind({
+            click: function () {
+                $("p").slideToggle();
+            },
+            mouseover: function () {
+                $("body").css("background-color", "red");
+            },
+            mouseout: function () {
+                $("body").css("background-color", "#FFFFFF");
+            }
+        });
+    });
+</script>
+</html>

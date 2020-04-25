@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>focus&&blur事件</title>
+    <script type="text/javascript" src="../../../lib/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<div>Entry your name: <input type="text"></div>
+<p>
+    <button id="btn1">触发输入域的 focus 事件</button>
+</p>
+<p>
+    <button id="btn2">触发输入域的 blur 事件</button>
+</p>
+</body>
+<script type="text/javascript">
+    $(function () {
+        // 获得焦点
+        $("input").focus(function () {
+            $("input").css("background-color", "#FFFFCC");
+        });
+        // 失去焦点
+        $("input").blur(function () {
+            $("input").css("background-color", "#D6D6FF");
+        });
+        // 触发获取焦点事件
+        $("#btn1").click(function () {
+            $("input").focus();
+        });
+        // 触发失去焦点事件
+        $("#btn2").click(function () {
+            $("input").blur();
+        });
+    });
+</script>
+</html>

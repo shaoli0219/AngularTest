@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数概念</title>
+</head>
+<style type="text/css">
+
+</style>
+<body>
+
+</body>
+<script type="text/javascript">
+    /**
+     * 函数function
+     *  - 函数也是一个对象
+     *  - 函数中可以封装一些功能和一些数据，，然后在需要时调用这些功能或者数据
+     *  - 使用typeof检测函数对象会返回function
+     */
+
+    let fun1 = new Function();
+    console.log(typeof fun1);        //function
+
+
+    /**
+     * 创建函数方法一
+     *
+     * 使用 构造函数 创建
+     */
+    let fun2 = new Function("console.log('这是一个通过构造函数生成的函数')");
+    fun2();      //function
+
+    /**
+     * 创建函数方法二
+     *
+     * 使用 函数声明 创建
+     */
+    function fun3() {
+        console.log("使用 函数声明 创建函数");
+    }
+
+    fun3();
+
+    /**
+     * 创建函数方法三
+     *
+     * 使用 函数表达式 创建
+     */
+    let fun4 = function () {
+        console.log("使用 函数表达式 创建创建函数");
+    };
+
+    fun4();
+
+</script>
+</html>
